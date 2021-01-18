@@ -46,9 +46,11 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 print(BASE_DIR)
 print(latest)
-'''
+
 with open(os.path.join(BASE_DIR, 'latest.txt'), 'r+') as f_read:
     before = f_read.readline()
+    print(before)
+    '''
     if before != latest:
         bot.sendMessage(chat_id=chat_id, text='새 글이 올라왔어요!') 
     else:
