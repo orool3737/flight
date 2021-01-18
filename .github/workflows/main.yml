@@ -1,8 +1,8 @@
 name: cralwer
 
 on:
-  schedule:
-  - cron:  '*/20 * * * *'
+  push:
+    branches : [master]
 
 jobs:
   run:
