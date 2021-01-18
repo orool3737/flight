@@ -61,4 +61,5 @@ with open(os.path.join(BASE_DIR, 'latest.txt'), 'w+') as f_write:
     f_write.write(latest)
 
 with open(os.path.join(BASE_DIR, 'latest.txt'), 'r+') as f_read:
-    print(latest)
+    woong = f_read.readline()
+    print(woong)
