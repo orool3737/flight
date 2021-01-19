@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 import os
 import telegram
 from github import Github
-'''
+
 url = "http://www.slrclub.com/"
 
 options = webdriver.ChromeOptions()
@@ -42,17 +42,14 @@ latest = information_list[0].text
 
 bot = telegram.Bot(token='1302211155:AAHJNLLFl8b-d3c2MLa-5igT038s-d2MUj4')
 chat_id = 1491027495 #bot.getUpdates()[-1].message.chat.id
-'''
+
 github_token_g = os.environ['github_token']
 repo_name = 'GG'
-print(github_token_g)
-
-'''
 repo = Github(github_token_g).get_user().get_repo(repo_name)
 if issue_body != '' and repo_name == repo.name:
     res = repo.create_issue(title=issue_title, body=latest)
     print(res)
-    '''
+
 '''
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
