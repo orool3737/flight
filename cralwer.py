@@ -42,6 +42,13 @@ latest = information_list[0].text
 bot = telegram.Bot(token='1302211155:AAHJNLLFl8b-d3c2MLa-5igT038s-d2MUj4')
 chat_id = 1491027495 #bot.getUpdates()[-1].message.chat.id
 
+github_token = os.environ['github_token']
+repo_name = '깃허브 레포지토리'
+repo = github(github_token).get_user().get_repo(repo_name)
+if issue_body != '' and repo_name == repo.name:
+    res = repo.create_issue(title=issue_title, body=latest)
+    print(res)
+'''
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 with open(os.path.join(BASE_DIR, 'latest.txt'), 'r+') as f_read:
@@ -54,3 +61,4 @@ with open(os.path.join(BASE_DIR, 'latest.txt'), 'r+') as f_read:
 
 with open(os.path.join(BASE_DIR, 'latest.txt'), 'w+') as f_write:
     f_write.write(latest)
+    '''
