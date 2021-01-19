@@ -44,7 +44,7 @@ chat_id = 1491027495 #bot.getUpdates()[-1].message.chat.id
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-with open('latest.txt', 'r') as f_read:
+with open(os.path.join(BASE_DIR, 'latest.txt'), 'r+') as f_read:
     before = f_read.readline()
     if before != latest:
         bot.sendMessage(chat_id=chat_id, text='새 글이 올라왔어요!') 
@@ -52,5 +52,5 @@ with open('latest.txt', 'r') as f_read:
         bot.sendMessage(chat_id=chat_id, text='새 글이 없어요 ㅠㅠ')
     f_read.close()
 
-with open('latest.txt', 'w') as f_write:
+with open(os.path.join(BASE_DIR, 'latest.txt'), 'w+') as f_write:
     f_write.write(latest)
