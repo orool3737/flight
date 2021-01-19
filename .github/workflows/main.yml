@@ -21,3 +21,5 @@ jobs:
     - name: test
       run: |
         python cralwer.py
+      env:
+        github_token: ${{secrets.githubtoken}}
