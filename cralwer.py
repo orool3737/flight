@@ -46,10 +46,13 @@ chat_id = 1491027495 #bot.getUpdates()[-1].message.chat.id
 github_token_g = os.environ['github_token']
 repo_name = 'GG'
 repo = Github(github_token_g).get_user().get_repo(repo_name)
+res = repo.create_issue(title=issue_title, body=latest)
+
+'''
 if issue_body != '' and repo_name == repo.name:
     res = repo.create_issue(title=issue_title, body=latest)
     print(res)
-
+'''
 '''
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
