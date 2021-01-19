@@ -6,6 +6,7 @@ import requests
 from bs4 import BeautifulSoup
 import os
 import telegram
+from github import Github
 
 url = "http://www.slrclub.com/"
 
@@ -44,7 +45,7 @@ chat_id = 1491027495 #bot.getUpdates()[-1].message.chat.id
 
 github_token = os.environ['github_token']
 repo_name = '깃허브 레포지토리'
-repo = github(github_token).get_user().get_repo(repo_name)
+repo = Github(github_token).get_user().get_repo(repo_name)
 if issue_body != '' and repo_name == repo.name:
     res = repo.create_issue(title=issue_title, body=latest)
     print(res)
