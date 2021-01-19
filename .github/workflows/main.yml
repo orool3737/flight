@@ -22,4 +22,4 @@ jobs:
       run: |
         python cralwer.py
       env:
-        github_token: ${{secrets.githubtoken}}
+        github_token: ${{secrets.GITHUBTOKEN}}
