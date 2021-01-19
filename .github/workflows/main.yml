@@ -19,7 +19,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt        
     - name: test
+      env:
+        github_token: ${{ secrets.GITHUBTOKEN }}
       run: |
         python cralwer.py
-      env:
-        github_token: ${{secrets.GITHUBTOKEN}}
