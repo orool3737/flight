@@ -21,6 +21,6 @@ jobs:
     - name: test1
       env:
         github_token: ${{ secrets.GITHUBTOKEN }}
-        telegram_token: ${{ secrets.TELEGRAMTOKEN }}:
+        telegram_token: ${{ secrets.TELEGRAMTOKEN }}
       run: |
         python cralwer.py
