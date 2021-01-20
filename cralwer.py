@@ -45,7 +45,7 @@ telegram_token_g = os.environ.get('telegram_token')
 bot = telegram.Bot(token=telegram_token_g)
 chat_id = 1491027495 #bot.getUpdates()[-1].message.chat.id
 
-github_token_g = os.environ['github_token']
+github_token_g = os.environ.get('github_token')
 repo_name = 'GG'
 repo = Github(github_token_g).get_user().get_repo(repo_name)
 res = repo.create_issue(title=issue_title, body=latest)
