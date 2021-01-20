@@ -40,7 +40,9 @@ soup=BeautifulSoup(req, 'html.parser')
 information_list = soup.select("span.date")
 latest = information_list[0].text
 
-bot = telegram.Bot(token='1302211155:AAHJNLLFl8b-d3c2MLa-5igT038s-d2MUj4')
+telegram_token_g = os.environ.get('telegram_token')
+
+bot = telegram.Bot(token=telegram_token_g)
 chat_id = 1491027495 #bot.getUpdates()[-1].message.chat.id
 
 github_token_g = os.environ['github_token']
