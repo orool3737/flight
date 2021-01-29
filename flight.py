@@ -43,10 +43,10 @@ driver.find_elements_by_link_text("30")[0].click()
 #항공권 검색 클릭
 driver.find_element_by_link_text("항공권 검색").click()
 
-WebDriverWait(driver, 200).until(EC.presence_of_element_located((By.XPATH, "//*[@id='content']/div[2]/div/div[4]/ul/li[1]")))
+WebDriverWait(driver, 60).until(EC.presence_of_element_located((By.XPATH, "//*[@id='content']/div[2]/div/div[4]/ul/li[1]")))
 
 # 스크롤 가장 아래로 내리기
-interval = 5
+interval = 2
 prev_height = driver.execute_script("return document.body.scrollHeight")
 
 while True:
@@ -65,11 +65,7 @@ soup = BeautifulSoup(req, 'html.parser')
 company = soup.select("span.h_tit_result.ng-binding")
 department_time = soup.select("dd.txt_time.ng-binding")
 department = soup.select("dd.txt_code.ng-binding")
-arrival = soup.select("dd.txt_code.ng-binding")
-arrival_time = soup.select("dd.txt_time.ng-binding")
 price = soup.select("span.txt_pay.ng-binding")
-
-print(company[0].text, department[0].text, department_time[0].text, arrival[0].text, arrival_time[0].text, price[0].text)
 
 dateformat = "%H:%M"
 
