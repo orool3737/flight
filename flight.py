@@ -67,8 +67,10 @@ department_time = soup.select("dd.txt_time.ng-binding")
 department = soup.select("dd.txt_code.ng-binding")
 price = soup.select("span.txt_pay.ng-binding")
 
-dateformat = "%H:%M"
+print(type(department_time[0]))
 
+dateformat = "%H:%M"
+'''
 i=0
 while soup:
     try:
@@ -76,7 +78,7 @@ while soup:
         i = i + 1
     except IndexError:
         break
-
+'''
 '''
 elem = WebDriverWait(driver, 40).until(EC.presence_of_element_located((By.XPATH, "//*[@id='content']/div[2]/div/div[4]/ul")))
 #-> elem는 웹드라이버를 통해 브라우져에서 최대 10초를 기다려주고 xpath 기준으로 값에 해당하는 elem가 나올때까지 기다려줘.
