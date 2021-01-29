@@ -71,7 +71,7 @@ i=0
 while soup:
     try:
         department_hour = datetime.strptime(department_time[3*i].text, '%H:%M').hour
-        if department_hour >= 18:
+        if department_hour >= 18 and department_hour <= 19:
            print(company[i].text, department[i].text, department_time[3*i].text, price[i].text)
         i = i + 1
     except IndexError:
