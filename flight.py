@@ -16,7 +16,8 @@ url='https://flight.naver.com/flights/'
 options = webdriver.ChromeOptions()
 options.add_argument('headless')    # 웹 브라우저를 띄우지 않는 headlss chrome 옵션 적용
 options.add_argument('disable-gpu')    # GPU 사용 안함
-driver = webdriver.Chrome("./chromedriver", options=options)
+chrome_driver = os.path.join('chromedriver')
+driver = webdriver.Chrome(chrome_driver, options=options)
 
 driver.get(url)
 time.sleep(1)
