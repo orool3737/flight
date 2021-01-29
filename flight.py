@@ -67,7 +67,7 @@ department_time = soup.select("dd.txt_time.ng-binding")
 department = soup.select("dd.txt_code.ng-binding")
 price = soup.select("span.txt_pay.ng-binding")
 
-d = datetime.datetime.strptime(department_time[0].text, '%H:%m')
+print(datetime.datetime.strptime(department_time[0].text, '%H:%M'))
 
 '''
 i=0
