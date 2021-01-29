@@ -72,7 +72,7 @@ dateformat = "%H:%M"
 i=0
 while soup:
     try:
-        print(company[i].text, department[i].text, department_time[i].text, arrival[i].text, arrival_time[i].text, price[i].text)
+        print(company[i].text, department[i].text, department_time[i].text, price[i].text)
         i = i + 1
     except IndexError:
         break
