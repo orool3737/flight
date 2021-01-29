@@ -68,7 +68,6 @@ arrival_time = soup.select("dd.txt_time.ng-binding")
 price = soup.select("span.txt_pay.ng-binding")
 
 print(company[0].text, department[0].text, department_time[0].text, arrival[0].text, arrival_time[0].text, price[0].text)
-print(company[1].text, department[1].text, department_time[1].text, arrival[1].text, arrival_time[1].text, price[1].text)
 
 dateformat = "%H:%M"
 
@@ -77,8 +76,6 @@ while soup:
     try:
         print(company[i].text, department[i].text, department_time[i].text, arrival[i].text, arrival_time[i].text, price[i].text)
         i = i + 1
-        minuet = datetime.datetime.strptime(department_time[i], dateformat)
-        print(minuet.hour)
     except IndexError:
         break
 
