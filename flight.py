@@ -68,7 +68,7 @@ department = soup.select("dd.txt_code.ng-binding")
 price = soup.select("span.txt_pay.ng-binding")
 
 dateformat = "%H:%M"
-print(department_time.text)
+print(department_time)
 '''
 i=0
 while soup:
