@@ -43,10 +43,10 @@ driver.find_elements_by_link_text("30")[0].click()
 #항공권 검색 클릭
 driver.find_element_by_link_text("항공권 검색").click()
 
-WebDriverWait(driver, 100).until(EC.presence_of_element_located((By.XPATH, "//*[@id='content']/div[2]/div/div[4]/ul/li[1]")))
+WebDriverWait(driver, 200).until(EC.presence_of_element_located((By.XPATH, "//*[@id='content']/div[2]/div/div[4]/ul/li[1]")))
 
 # 스크롤 가장 아래로 내리기
-interval = 2
+interval = 5
 prev_height = driver.execute_script("return document.body.scrollHeight")
 
 while True:
