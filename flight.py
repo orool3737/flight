@@ -67,17 +67,16 @@ department_time = soup.select("dd.txt_time.ng-binding")
 department = soup.select("dd.txt_code.ng-binding")
 price = soup.select("span.txt_pay.ng-binding")
 
-department_hour = datetime.strptime(department_time[0].text, '%H:%M').hour
-print(department_hour)
-'''
 i=0
 while soup:
     try:
-        print(company[i].text, department[i].text, department_time[3*i].text, price[i].text)
+        department_hour = datetime.strptime(department_time[0].text, '%H:%M').hour
+        if department_hour >= 6:
+           print(company[i].text, department[i].text, department_time[3*i].text, price[i].text)
         i = i + 1
     except IndexError:
         break
-'''
+
 '''
 elem = WebDriverWait(driver, 40).until(EC.presence_of_element_located((By.XPATH, "//*[@id='content']/div[2]/div/div[4]/ul")))
 #-> elem는 웹드라이버를 통해 브라우져에서 최대 10초를 기다려주고 xpath 기준으로 값에 해당하는 elem가 나올때까지 기다려줘.
