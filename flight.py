@@ -23,7 +23,7 @@ driver = webdriver.Chrome(chrome_driver, options=options)
 driver.get(url)
 time.sleep(1)
 
-now = datetime.datetime.today()
+now = datetime.today()
 
 delta = 4 - now.weekday()
 if delta <= 0:
