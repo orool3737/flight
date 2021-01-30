@@ -49,10 +49,9 @@ while j<3:
        friday_month[j+1] = 0
     j = j+1
 
-
-print(friday_month[1].day)
-print(friday_month[2].day)
-print(friday_month[3].day)
+print(friday_month[1])
+print(friday_month[2])
+print(friday_month[3])
 
 #편도 버튼 클릭
 driver.find_element_by_link_text("편도").click()
