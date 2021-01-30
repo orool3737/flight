@@ -28,14 +28,26 @@ print(now)
 delta = 4 - now.weekday()
 if delta <= 0:
     delta = 11 - now.weekday()
+friday[0] = now
+friday[1] = friday[0] + datetime.timedelta(days=delta)
+friday[2] = friday[1] + datetime.timedelta(days=7)
+friday[3] = friday[2] + datetime.timedelta(days=7)
 
-first_friday = now + datetime.timedelta(days=delta)
-second_friday = first_friday + datetime.timedelta(days=7)
-third_friday = second_friday + datetime.timedelta(days=7)
+print(friday[1].day)
+print(friday[2].day)
+print(friday[3].day)
 
-print(first_friday.day)
-print(second_friday.day)
-print(third_friday.day)
+j = 0
+while j<4:
+    if friday[j].month != friday[j+1].month:
+       friday_month[j+1] = 1
+    else
+       friday_month[j+1] = 0
+    j = j+1
+
+print(friday_month[1].day)
+print(friday_month[2].day)
+print(friday_month[3].day)
 
 #편도 버튼 클릭
 driver.find_element_by_link_text("편도").click()
