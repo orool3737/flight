@@ -23,6 +23,20 @@ driver = webdriver.Chrome(chrome_driver, options=options)
 driver.get(url)
 time.sleep(1)
 
+now = datetime.datetime.today()
+
+delta = 4 - now.weekday()
+if delta <= 0:
+    delta = 11 - now.weekday()
+
+first_friday = now + datetime.timedelta(days=delta)
+second_friday = first_friday + datetime.timedelta(days=7)
+third_friday = second_friday + datetime.timedelta(days=7)
+
+print(first_friday)
+print(second_friday)
+print(third_friday)
+
 #편도 버튼 클릭
 driver.find_element_by_link_text("편도").click()
 
