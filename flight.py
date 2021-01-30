@@ -25,7 +25,7 @@ time.sleep(1)
 
 now = datetime.today()
 print(now)
-'''
+
 delta = 4 - now.weekday()
 if delta <= 0:
     delta = 11 - now.weekday()
@@ -37,7 +37,7 @@ third_friday = second_friday + datetime.timedelta(days=7)
 print(first_friday)
 print(second_friday)
 print(third_friday)
-'''
+
 #편도 버튼 클릭
 driver.find_element_by_link_text("편도").click()
 
@@ -53,7 +53,7 @@ driver.find_element_by_link_text("김포").click()
 driver.find_element_by_link_text("가는날 선택").click()
 
 # [0]은 이번달 [1]은 다음달
-driver.find_elements_by_link_text("30")[0].click()
+driver.find_elements_by_link_text("31")[0].click()
 
 #항공권 검색 클릭
 driver.find_element_by_link_text("항공권 검색").click()
