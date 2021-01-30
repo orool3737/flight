@@ -39,6 +39,7 @@ print(friday[1].day)
 print(friday[2].day)
 print(friday[3].day)
 
+friday_month = [0, 0, 0, 0]
 j = 0
 while j<4:
     if friday[j].month != friday[j+1].month:
