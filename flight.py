@@ -29,7 +29,7 @@ delta = 4 - now.weekday()
 if delta <= 0:
     delta = 11 - now.weekday()
 
-friday = []
+friday = [0, 0, 0, 0]
 friday[0] = now
 friday[1] = friday[0] + datetime.timedelta(days=delta)
 friday[2] = friday[1] + datetime.timedelta(days=7)
