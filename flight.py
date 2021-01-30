@@ -49,6 +49,7 @@ while j<3:
        friday_month[j+1] = 0
     j = j+1
 
+
 print(friday_month[1].day)
 print(friday_month[2].day)
 print(friday_month[3].day)
