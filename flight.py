@@ -41,7 +41,7 @@ j = 0
 while j<4:
     if friday[j].month != friday[j+1].month:
        friday_month[j+1] = 1
-    else
+    else:
        friday_month[j+1] = 0
     j = j+1
 
