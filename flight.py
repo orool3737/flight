@@ -33,9 +33,9 @@ first_friday = now + datetime.timedelta(days=delta)
 second_friday = first_friday + datetime.timedelta(days=7)
 third_friday = second_friday + datetime.timedelta(days=7)
 
-print(first_friday)
-print(second_friday)
-print(third_friday)
+print(first_friday.day)
+print(second_friday.day)
+print(third_friday.day)
 
 #편도 버튼 클릭
 driver.find_element_by_link_text("편도").click()
