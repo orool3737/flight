@@ -3,7 +3,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
 import os
 import time
-from datetime import datetime, timedelta
+import datetime
 import requests
 from bs4 import BeautifulSoup
 import telegram
@@ -22,7 +22,7 @@ driver = webdriver.Chrome(chrome_driver, options=options)
 driver.get(url)
 time.sleep(1)
 
-now = datetime.today()
+now = datetime.datetime.today()
 print(now)
 
 delta = 4 - now.weekday()
