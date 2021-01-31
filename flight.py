@@ -12,7 +12,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from cralwer_flight import exract_flight
 
-now = datetime.datetime.today()
+now = datetime.datetime.today() + datetime.timedelta(hours=9)
+
 print(now)
 
 delta = 4 - now.weekday()
