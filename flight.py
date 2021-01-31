@@ -77,7 +77,7 @@ driver.find_element_by_link_text("김포").click()
 driver.find_element_by_link_text("가는날 선택").click()
 
 # [0]은 이번달 [1]은 다음달
-driver.find_elements_by_link_text(1)[1].click()
+driver.find_elements_by_link_text(1)[0].click()
 
 #항공권 검색 클릭
 driver.find_element_by_link_text("항공권 검색").click()
