@@ -73,7 +73,7 @@ def exract_flight(flight_day, flight_month):
        try:
            department_hour = datetime.datetime.strptime(department_time[3*i].text, '%H:%M').hour
            if department_hour >= 18 and department_hour < 19:
-              content.append(company[i].text + " " + department_time[3*i].text + " " + price[i].text)
+              content.append(company[i].text + " " + department_time[3*i].text + " ￦" + price[i].text)
            i = i + 1
        except IndexError:
            break
