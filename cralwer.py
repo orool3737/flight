@@ -11,7 +11,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-def exract_flight(flight_day, flight_month);
+def exract_flight(flight_day, flight_month):
    url='https://flight.naver.com/flights/'
 
    options = webdriver.ChromeOptions()
