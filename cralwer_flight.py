@@ -19,7 +19,10 @@ def exract_flight(flight_day, flight_month):
    options.add_argument('disable-gpu')    # GPU 사용 안함
    chrome_driver = os.path.join('chromedriver')
    driver = webdriver.Chrome(chrome_driver, options=options)
- 
+  
+   driver.get(url)
+   time.sleep(1)
+
    #편도 버튼 클릭
    driver.find_element_by_link_text("편도").click()
 
