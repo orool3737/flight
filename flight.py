@@ -43,14 +43,13 @@ print(friday_month[1])
 print(friday_month[2])
 print(friday_month[3])
 
-frist_content = exract_flight(str(friday[1].day), friday_month[1])
+first_content = exract_flight(str(friday[1].day), friday_month[1])
 second_content = exract_flight(str(friday[2].day), friday_month[2])
 third_content = exract_flight(str(friday[3].day), friday_month[3])
 
 first_content.insert(0,friday[1].strftime('%Y-%m-%d'))
 second_content.insert(0,friday[2].strftime('%Y-%m-%d'))
 third_content.insert(0,friday[3].strftime('%Y-%m-%d'))
-
 
 total_content = first_content + second_content + third_content
 total_content_clean = '\n'.join(total_content)
