@@ -51,9 +51,9 @@ first_content.insert(0,friday[1].strftime('%Y-%m-%d'))
 second_content.insert(0,friday[2].strftime('%Y-%m-%d'))
 third_content.insert(0,friday[3].strftime('%Y-%m-%d'))
 
-print(frist_content)
-print(second_content)
-print(third_content)
+total_content = first_content + second_content + third_content
+total_content_clean = '\n'.join(total_content)
+print(total_content_clean)
 
 '''
 elem = WebDriverWait(driver, 40).until(EC.presence_of_element_located((By.XPATH, "//*[@id='content']/div[2]/div/div[4]/ul")))
