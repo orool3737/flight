@@ -10,8 +10,7 @@ import telegram
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from cralwer import flight_extract
-
+from cralwer import exract_flight
 now = datetime.datetime.today()
 print(now)
 
@@ -43,61 +42,13 @@ print(friday_month[1])
 print(friday_month[2])
 print(friday_month[3])
 
-frist_content = 
+frist_content = exract_flight(friday[1], friday_month[1])
+second_content = exract_flight(friday[2], friday_month[2])
+third_content = exract_flight(friday[3], friday_month[3])
 
-#편도 버튼 클릭
-driver.find_element_by_link_text("편도").click()
-
-#출발지 버튼 클릭
-driver.find_element_by_link_text("인천").click()
-driver.find_element_by_link_text("김해/부산").click()
-
-#도착 버튼 클릭
-driver.find_element_by_link_text("도착").click()
-driver.find_element_by_link_text("김포").click()
-
-#가는날 선택 버튼 클릭
-driver.find_element_by_link_text("가는날 선택").click()
-
-# [0]은 이번달 [1]은 다음달
-driver.find_elements_by_link_text("31")[0].click()
-
-#항공권 검색 클릭
-driver.find_element_by_link_text("항공권 검색").click()
-
-WebDriverWait(driver, 60).until(EC.presence_of_element_located((By.XPATH, "//*[@id='content']/div[2]/div/div[4]/ul/li[1]")))
-
-# 스크롤 가장 아래로 내리기
-interval = 2
-prev_height = driver.execute_script("return document.body.scrollHeight")
-
-while True:
-    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-    time.sleep(interval)
-    current_height = driver.execute_script("return document.body.scrollHeight")
-    if current_height == prev_height:
-        break
-
-    prev_height = current_height
-
-print("프린트 완료")
-
-req = driver.page_source
-soup = BeautifulSoup(req, 'html.parser')
-company = soup.select("span.h_tit_result.ng-binding")
-department_time = soup.select("dd.txt_time.ng-binding")
-department = soup.select("dd.txt_code.ng-binding")
-price = soup.select("span.txt_pay.ng-binding")
-
-i=0
-while soup:
-    try:
-        department_hour = datetime.datetime.strptime(department_time[3*i].text, '%H:%M').hour
-        if department_hour >= 18 and department_hour < 19:
-           print(company[i].text, department[i].text, department_time[3*i].text, price[i].text)
-        i = i + 1
-    except IndexError:
-        break
+print(frist_content)
+print(second_content)
+print(third_content)
 
 '''
 elem = WebDriverWait(driver, 40).until(EC.presence_of_element_located((By.XPATH, "//*[@id='content']/div[2]/div/div[4]/ul")))
