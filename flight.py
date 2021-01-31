@@ -51,6 +51,7 @@ first_content.insert(0,friday[1].strftime('%Y-%m-%d'))
 second_content.insert(0,friday[2].strftime('%Y-%m-%d'))
 third_content.insert(0,friday[3].strftime('%Y-%m-%d'))
 
+
 total_content = first_content + second_content + third_content
 total_content_clean = '\n'.join(total_content)
 print(total_content_clean)
