@@ -10,7 +10,7 @@ import telegram
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from cralwer import exract_flight
+from cralwer_flight import exract_flight
 
 now = datetime.datetime.today()
 print(now)
@@ -116,8 +116,8 @@ while soup:
         i = i + 1
     except IndexError:
         break
-
-print(content)
+content_clean = '\n'.join(content)
+print(content_clean)
 
 '''
 elem = WebDriverWait(driver, 40).until(EC.presence_of_element_located((By.XPATH, "//*[@id='content']/div[2]/div/div[4]/ul")))
