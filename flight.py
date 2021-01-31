@@ -10,17 +10,7 @@ import telegram
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-
-url='https://flight.naver.com/flights/'
-
-options = webdriver.ChromeOptions()
-options.add_argument('headless')    # 웹 브라우저를 띄우지 않는 headlss chrome 옵션 적용
-options.add_argument('disable-gpu')    # GPU 사용 안함
-chrome_driver = os.path.join('chromedriver')
-driver = webdriver.Chrome(chrome_driver, options=options)
-
-driver.get(url)
-time.sleep(1)
+from cralwer import flight_extract
 
 now = datetime.datetime.today()
 print(now)
@@ -52,6 +42,8 @@ while j<3:
 print(friday_month[1])
 print(friday_month[2])
 print(friday_month[3])
+
+frist_content = 
 
 #편도 버튼 클릭
 driver.find_element_by_link_text("편도").click()
