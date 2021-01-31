@@ -25,9 +25,9 @@ friday[1] = friday[0] + datetime.timedelta(days=delta)
 friday[2] = friday[1] + datetime.timedelta(days=7)
 friday[3] = friday[2] + datetime.timedelta(days=7)
 
-print(friday[1].day)
-print(friday[2].day)
-print(friday[3].day)
+print(friday[1].strftime('%Y-%m-%d'))
+print(friday[2].strftime('%Y-%m-%d'))
+print(friday[3].strftime('%Y-%m-%d'))
 
 friday_month = [0, 0, 0, 0]
 
