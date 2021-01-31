@@ -43,9 +43,9 @@ print(friday_month[1])
 print(friday_month[2])
 print(friday_month[3])
 
-frist_content = exract_flight(friday[1].day, friday_month[1])
-second_content = exract_flight(friday[2].day, friday_month[2])
-third_content = exract_flight(friday[3].day, friday_month[3])
+frist_content = exract_flight(str(friday[1].day), friday_month[1])
+second_content = exract_flight(str(friday[2].day), friday_month[2])
+third_content = exract_flight(str(friday[3].day), friday_month[3])
 
 print(frist_content)
 print(second_content)
