@@ -55,7 +55,7 @@ third_content.insert(0,friday[3].strftime('%Y-%m-%d'))
 total_content = first_content + second_content + third_content
 total_content_clean = '\n'.join(total_content)
 print(total_content_clean)
-
+ 
 bot = telegram.Bot(token='1676490998:AAGXQvSDIZl-W9-yDnWh7WNKLHqdGQ9zOw4')
 chat_id = 1491027495 #bot.getUpdates()[-1].message.chat.id
 
