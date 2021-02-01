@@ -21,7 +21,7 @@ def exract_flight(flight_day, flight_month):
   
    driver.get(url)
    time.sleep(5)
-   WebDriverWait(driver, 60).until(EC.presence_of_element_located((By.XPATH, "//*[@id="btnSingle"]")))
+   WebDriverWait(driver, 60).until(EC.presence_of_element_located((By.XPATH, "//*[@id='btnSingle']")))
    
 
    #편도 버튼 클릭
