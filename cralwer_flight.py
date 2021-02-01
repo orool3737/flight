@@ -20,7 +20,9 @@ def exract_flight(flight_day, flight_month):
    driver = webdriver.Chrome(chrome_driver, options=options)
   
    driver.get(url)
-   time.sleep(1)
+   time.sleep(5)
+   WebDriverWait(driver, 60).until(EC.presence_of_element_located((By.XPATH, "//*[@id="btnSingle"]")))
+   
 
    #편도 버튼 클릭
    driver.find_element_by_link_text("편도").click()
@@ -43,6 +45,7 @@ def exract_flight(flight_day, flight_month):
    driver.find_element_by_link_text("항공권 검색").click()
    
    #driver.implicitly_wait(180)
+   time.sleep(10)
    WebDriverWait(driver, 60).until(EC.presence_of_element_located((By.XPATH, "//*[@id='content']/div[2]/div/div[4]")))
 
    # 스크롤 가장 아래로 내리기
