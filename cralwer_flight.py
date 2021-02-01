@@ -43,7 +43,7 @@ def exract_flight(flight_day, flight_month):
    #항공권 검색 클릭
    driver.find_element_by_link_text("항공권 검색").click()
 
-   WebDriverWait(driver, 120).until(EC.presence_of_element_located((By.XPATH, "//*[@id='content']/div[2]/div/div[4]/ul/li[1]")))
+   WebDriverWait(driver, 180).until(EC.presence_of_element_located((By.XPATH, "//*[@id='content']/div[2]/div/div[4]/ul/li[1]")))
 
    # 스크롤 가장 아래로 내리기
    interval = 2
@@ -66,6 +66,8 @@ def exract_flight(flight_day, flight_month):
    department_time = soup.select("dd.txt_time.ng-binding")
    department = soup.select("dd.txt_code.ng-binding")
    price = soup.select("span.txt_pay.ng-binding")
+
+   print(type(price[0].text))
 
    content = []
    i=0
