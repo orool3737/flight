@@ -68,14 +68,14 @@ def exract_flight(flight_day, flight_month):
    department = soup.select("dd.txt_code.ng-binding")
    price = soup.select("span.txt_pay.ng-binding")
 
-   print(price[0].text.replace(',', ''))
+   print(int(price[0].text.replace(',', '')))
 
    content = []
    i=0
    while soup:
        try:
            department_hour = datetime.datetime.strptime(department_time[3*i].text, '%H:%M').hour
-           if department_hour >= 18 and department_hour < 19 :
+           if department_hour >= 18 and department_hour < 19:
               content.append(company[i].text + " " + department_time[3*i].text + " ￦" + price[i].text)
            i = i + 1
        except IndexError:
