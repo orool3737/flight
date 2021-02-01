@@ -44,7 +44,7 @@ def exract_flight(flight_day, flight_month):
    driver.find_element_by_link_text("항공권 검색").click()
    
    #driver.implicitly_wait(180)
-   WebDriverWait(driver, 300).until(EC.presence_of_element_located((By.XPATH, "//*[@id='content']/div[2]/div/div[4]/ul/li[1]")))
+   WebDriverWait(driver, 180).until(EC.presence_of_element_located((By.XPATH, "//*[@id='content']/div[2]/div/div[4]/ul/li[1]")))
 
    # 스크롤 가장 아래로 내리기
    interval = 2
