@@ -67,7 +67,7 @@ def exract_flight(flight_day, flight_month):
    department = soup.select("dd.txt_code.ng-binding")
    price = soup.select("span.txt_pay.ng-binding")
 
-   print(type(price[0].text))
+   print(type(int(price[0].text.replace(',', ''))))
 
    content = []
    i=0
