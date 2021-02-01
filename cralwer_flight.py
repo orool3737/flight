@@ -16,7 +16,6 @@ def exract_flight(flight_day, flight_month):
 
    options = webdriver.ChromeOptions()
    options.add_argument('headless')    # 웹 브라우저를 띄우지 않는 headlss chrome 옵션 적용
-   options.add_argument('disable-gpu')    # GPU 사용 안함
    chrome_driver = os.path.join('chromedriver')
    driver = webdriver.Chrome(chrome_driver, options=options)
   
