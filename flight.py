@@ -20,16 +20,17 @@ delta = 4 - now.weekday()
 if delta <= 0:
     delta = 11 - now.weekday()
 
-friday = [0, 0, 0, 0]
+friday = [0, 0, 0, 0, 0]
 friday[0] = now
 friday[1] = friday[0] + datetime.timedelta(days=delta)
 friday[2] = friday[1] + datetime.timedelta(days=7)
 friday[3] = friday[2] + datetime.timedelta(days=7)
+friday[4] = friday[3] + datetime.timedelta(days=7)
 
-friday_month = [0, 0, 0, 0]
+friday_month = [0, 0, 0, 0, 0]
 
 j = 0
-while j<3:
+while j<4:
     if friday[0].month != friday[j+1].month:
        friday_month[j+1] = 1
     else:
@@ -39,12 +40,14 @@ while j<3:
 first_content = exract_flight(str(friday[1].day), friday_month[1])
 second_content = exract_flight(str(friday[2].day), friday_month[2])
 third_content = exract_flight(str(friday[3].day), friday_month[3])
+fourth_content = exract_flight(str(friday[4].day), friday_month[4])
 
 first_content.insert(0,friday[1].strftime('%Y-%m-%d'))
 second_content.insert(0,friday[2].strftime('%Y-%m-%d'))
 third_content.insert(0,friday[3].strftime('%Y-%m-%d'))
+fourth_content.insert(0,friday[4].strftime('%Y-%m-%d'))
 
-total_content = first_content + second_content + third_content
+total_content = first_content + second_content + third_content + fourth_content
 total_content_clean = '\n'.join(total_content)
  
 bot = telegram.Bot(token='1676490998:AAGXQvSDIZl-W9-yDnWh7WNKLHqdGQ9zOw4')
